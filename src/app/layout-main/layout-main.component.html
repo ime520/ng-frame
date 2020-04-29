@@ -1,0 +1,12 @@
+<p>layout-main works!</p>
+<mat-toolbar>菜单1</mat-toolbar>
+<mat-toolbar>菜单2</mat-toolbar>
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button></mat-menu
+>
+<button mat-icon-button [matMenuTriggerFor]="appMenu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+
+<router-outlet></router-outlet>
