@@ -3,13 +3,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.styl']
+  styleUrls: ['./login.component.styl'],
 })
 export class LoginComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  username: string = '';
+  password: string = '';
+  ngOnInit(): void {}
+  submitForm(formName) {
+    console.log(formName.invalid);
   }
-
 }
