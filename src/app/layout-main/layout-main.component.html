@@ -1,5 +1,15 @@
 <mat-toolbar class="header">
-  <button mat-flat-button (click)="goBlog()">博客</button>
-  <button mat-flat-button (click)="goBlog()">demo展示</button>
-  <button mat-raised-button color="primary" (click)="goLogin()">登录</button>
+  <div class="logo" (click)="goHome()">lsz的博客小院</div>
+  <ul class="menu-list">
+    <li class="menu">博客</li>
+    <li class="menu">demo</li>
+  </ul>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="goLogin()"
+    class="header-login"
+  >
+    登录
+  </button>
 </mat-toolbar>
