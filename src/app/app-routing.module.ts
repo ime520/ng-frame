@@ -4,8 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutMainComponent } from './layout-main/layout-main.component';
 
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
+import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
   {
@@ -14,10 +14,10 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      { path: 'about', component: AboutComponent },
-      { path: 'login', component: LoginComponent },
+      { path: 'blog', component: BlogComponent },
     ],
   },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
