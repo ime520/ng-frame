@@ -4,10 +4,19 @@ import {
   HttpInterceptor,
   HttpHandler,
   HttpRequest,
+  HttpResponse,
 } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
+interface Body {
+  data: object;
+}
+interface Response extends Body {
+  status: number;
+  body: Body;
+}
 /** Pass untouched request through to the next request handler. */
 @Injectable()
 export class NoopInterceptor implements HttpInterceptor {
@@ -18,6 +27,12 @@ export class NoopInterceptor implements HttpInterceptor {
     const cloneReq = req.clone({
       url: 'http://localhost' + req.url,
     });
-    return next.handle(cloneReq);
+    return next.handle(cloneReq).pipe(
+      tap((res: HttpResponse<Response>) => {
+        if (res.status === 200) {
+          return res.body.data;
+        }
+      })
+    );
   }
 }
