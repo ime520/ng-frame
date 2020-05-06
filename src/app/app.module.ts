@@ -11,6 +11,8 @@ import { LoginModule } from './login/login.module';
 
 import { LayoutMainModule } from './layout-main/layout-main.module';
 
+import { httpInterceptorProviders } from './http-interceptors/index';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -22,7 +24,7 @@ import { LayoutMainModule } from './layout-main/layout-main.module';
     HomeModule,
     LoginModule,
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
