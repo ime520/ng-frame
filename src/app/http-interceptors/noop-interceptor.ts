@@ -10,12 +10,8 @@ import {
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-interface Body {
+interface Response {
   data: object;
-}
-interface Response extends Body {
-  status: number;
-  body: Body;
 }
 /** Pass untouched request through to the next request handler. */
 @Injectable()
