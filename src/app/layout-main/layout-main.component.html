@@ -1,8 +1,8 @@
 <mat-toolbar class="header">
   <div class="logo" (click)="goHome()">lsz的博客小院</div>
   <ul class="menu-list">
-    <li class="menu">博客</li>
-    <li class="menu">demo</li>
+    <li class="menu" (click)="goBlog()">博客</li>
+    <li class="menu" (click)="goDemo()">demo</li>
   </ul>
   <button
     mat-raised-button
@@ -13,3 +13,5 @@
     登录
   </button>
 </mat-toolbar>
+
+<router-outlet></router-outlet>

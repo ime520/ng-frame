@@ -1,1 +1,8 @@
-<p>blog works!</p>
+<div class="container">
+  <ul>
+    <li class="article" *ngFor="let item of articles">
+      <h2>{{ item.title }}</h2>
+      <div>{{ item.abstract }}</div>
+    </li>
+  </ul>
+</div>

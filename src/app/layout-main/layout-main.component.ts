@@ -22,4 +22,8 @@ export class LayoutMainComponent implements OnInit {
   goHome(): void {
     this.router.navigateByUrl('/home');
   }
+
+  goDemo(): void {
+    this.router.navigateByUrl('/demo');
+  }
 }

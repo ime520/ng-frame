@@ -6,6 +6,7 @@ import { LayoutMainComponent } from './layout-main/layout-main.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { BlogComponent } from './blog/blog.component';
+import { DemoComponent } from './demo/demo.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'blog', component: BlogComponent },
+      { path: 'demo', component: DemoComponent },
     ],
   },
   { path: 'login', component: LoginComponent },
