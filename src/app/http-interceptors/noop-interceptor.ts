@@ -21,14 +21,13 @@ export class NoopInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const cloneReq = req.clone({
-      url: 'http://localhost' + req.url,
+      url: 'http://139.9.245.74' + req.url,
     });
     return next.handle(cloneReq).pipe(
-      tap((res: HttpResponse<Response>) => {
-        if (res.status === 200) {
-          return res.body.data;
-        }
-      })
+      tap(
+        (event) => console.log(event, 'event'),
+        (error) => console.log(error, 'error')
+      )
     );
   }
 }
