@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [LayoutMainComponent],
   imports: [
     CommonModule,
-    RouterModule.forRoot([]),
+    RouterModule.forChild([]),
     MatToolbarModule,
     MatButtonModule,
   ],
