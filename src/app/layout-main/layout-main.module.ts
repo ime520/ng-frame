@@ -9,6 +9,8 @@ import { BlogComponent } from '../blog/blog.component';
 import { DemoComponent } from '../demo/demo.component';
 import { HomeComponent } from '../home/home.component';
 
+import { BlogModule } from '../blog/blog.module';
+
 const routes: Routes = [
   {
     path: '',
@@ -28,6 +30,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MatToolbarModule,
     MatButtonModule,
+    BlogModule,
   ],
 })
 export class LayoutMainModule {}
