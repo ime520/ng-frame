@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import api from '../api/index';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface Form {
   invalid: boolean;
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {}
 
   username = '';
@@ -38,8 +40,14 @@ export class LoginComponent implements OnInit {
             this.userService.userInfo = res.data.userInfo;
             this.userService.storeUserInfo(res.data.userInfo);
             this.router.navigateByUrl('/home');
+            this.openSnackBar('登录成功', '');
           }
         });
     }
+  }
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 }

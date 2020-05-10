@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface UserInfo {
   username: String;
@@ -11,7 +12,11 @@ interface UserInfo {
   styleUrls: ['./layout-main.component.styl'],
 })
 export class LayoutMainComponent implements OnInit {
-  constructor(private router: Router, private userService: UserService) {
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private snackBar: MatSnackBar
+  ) {
     this.isLogin = this.userService.isLogin;
     this.userInfo = { ...this.userService.userInfo };
   }
@@ -47,5 +52,8 @@ export class LayoutMainComponent implements OnInit {
   handleLogout(): void {
     this.userService.removerUserInfo();
     this.userService.clearUserInfo();
+    this.snackBar.open('退出登录成功！', '', {
+      duration: 2000,
+    });
   }
 }
