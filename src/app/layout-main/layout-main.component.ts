@@ -20,6 +20,9 @@ export class LayoutMainComponent implements OnInit {
   userInfo: UserInfo = { username: '' };
 
   ngOnInit(): void {}
+  ngDoCheck(): void {
+    this.isLogin = this.userService.isLogin;
+  }
 
   goLogin(): void {
     this.router.navigateByUrl('/login');
