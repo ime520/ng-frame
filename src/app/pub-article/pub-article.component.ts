@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { EditorComponent } from '../editor/editor.component';
 
 @Component({
   selector: 'app-pub-article',
   templateUrl: './pub-article.component.html',
-  styleUrls: ['./pub-article.component.styl']
+  styleUrls: ['./pub-article.component.styl'],
 })
 export class PubArticleComponent implements OnInit {
+  @ViewChild(EditorComponent) editor: EditorComponent;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  getEditorContent() {
+    let content = this.editor.clickHandle();
+    if (!content) {
+      alert('请输入内容！');
+      return;
+    }
+    alert(content);
   }
 
+  handlePublish(): void {
+    this.getEditorContent();
+  }
 }
