@@ -4,8 +4,10 @@ import { LayoutMainComponent } from './layout-main.component';
 import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { BlogModule } from '../blog/blog.module';
+import { PubArticleModule } from '../pub-article/pub-article.module';
 
 @NgModule({
   declarations: [LayoutMainComponent],
@@ -15,6 +17,8 @@ import { BlogModule } from '../blog/blog.module';
     MatToolbarModule,
     MatButtonModule,
     BlogModule,
+    MatMenuModule,
+    PubArticleModule,
   ],
 })
 export class LayoutMainModule {}

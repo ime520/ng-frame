@@ -15,6 +15,10 @@
   </button>
   <div class="header-user" *ngIf="isLogin">
     <span>{{ userInfo.username }}</span>
+    <button mat-button [matMenuTriggerFor]="menu">个人中心</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="goPubArticle()">发布文章</button>
+    </mat-menu>
     <span class="header-user-logout" (click)="handleLogout()">退出</span>
   </div>
 </mat-toolbar>

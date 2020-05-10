@@ -40,6 +40,10 @@ export class LayoutMainComponent implements OnInit {
     this.router.navigateByUrl('/demo');
   }
 
+  goPubArticle(): void {
+    this.router.navigateByUrl('/pubArticle');
+  }
+
   handleLogout(): void {
     this.userService.removerUserInfo();
     this.userService.clearUserInfo();
