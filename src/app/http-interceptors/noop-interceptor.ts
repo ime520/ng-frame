@@ -23,11 +23,6 @@ export class NoopInterceptor implements HttpInterceptor {
     const cloneReq = req.clone({
       url: 'http://139.9.245.74' + req.url,
     });
-    return next.handle(cloneReq).pipe(
-      tap(
-        (event) => console.log(event, 'event'),
-        (error) => console.log(error, 'error')
-      )
-    );
+    return next.handle(cloneReq);
   }
 }

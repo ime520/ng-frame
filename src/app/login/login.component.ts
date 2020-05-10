@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
   submitForm(formName: Form) {
     const valid = !formName.invalid;
-    console.log(typeof formName);
     if (valid) {
       this.http
         .post(api.login, { username: this.username, password: this.password })
