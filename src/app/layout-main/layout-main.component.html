@@ -9,9 +9,14 @@
     color="primary"
     (click)="goLogin()"
     class="header-login"
+    *ngIf="!isLogin"
   >
     登录
   </button>
+  <div class="header-user" *ngIf="isLogin">
+    <span>{{ userInfo.username }}</span>
+    <span class="header-user-logout" (click)="handleLogout()">退出</span>
+  </div>
 </mat-toolbar>
 
 <div class="content">
