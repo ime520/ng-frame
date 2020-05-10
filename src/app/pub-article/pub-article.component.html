@@ -1,10 +1,16 @@
-<div class="editor">
-  <editor></editor>
-</div>
+<div class="content">
+  <mat-form-field>
+    <input type="text" matInput [(ngModel)]="title" />
+  </mat-form-field>
 
-<div class="btns">
-  <button mat-flat-button>保存</button>
-  <button mat-stroked-button color="primary" (click)="handlePublish()">
-    发布
-  </button>
+  <div class="editor">
+    <editor></editor>
+  </div>
+
+  <div class="btns">
+    <button mat-flat-button>保存</button>
+    <button mat-stroked-button color="primary" (click)="handlePublish()">
+      发布
+    </button>
+  </div>
 </div>

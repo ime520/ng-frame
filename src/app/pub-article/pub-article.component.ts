@@ -13,6 +13,8 @@ export class PubArticleComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  title: String = '我的文章';
+
   getEditorContent() {
     let content = this.editor.clickHandle();
     if (!content) {
